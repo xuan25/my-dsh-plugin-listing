@@ -16,6 +16,7 @@
 | [`dsh-imagegen`](https://github.com/xuan25/dsh-imagegen) | 它让 agent 能生成图像：单个 `imagegen` 工具接入任意 OpenAI 兼容图像后端并渲染图像，并可检查已配置后端及其实时状态。 | ✅ web/headless/sdk/acp；❌ sdk-minimal（硬依赖 skills 服务） |
 | [`@tencent-connect/dsh-qqbot`](https://github.com/xuan25/dsh-qqbot) (forked) | 它给 profile 提供 QQ IM 通道：维持与 QQ 开放平台的 WS 长连接，处理 QQ 消息的收发与 bot 生命周期，使 agent 能经 QQ 与用户实时交互。 |  ✅ web；❌ headless（一次性进程 + 交互式 QR 绑定）；✅ sdk/acp/sdk-minimal |
 | [`dsh-qqbot-send`](https://github.com/xuan25/dsh-qqbot-send) | 它让 agent 能主动把文本、Markdown 或文件附件发送到任意 QQ 目标（私聊/群/频道/公会 DM）；独立调用 QQ 开放平台 REST API，因此可以在没有 qqbot 网关的 profile 中单独挂载。 |  ✅ web/headless/sdk/acp；❓ sdk-minimal |
+| [`dsh-context-reminder`](https://github.com/xuan25/dsh-context-reminder) | 它给 agent 提供声明式的 standing context 复投：把宿主声明的常设文本块（输出纪律、输出约定等）在配置的触发点（turn 开始 / tool 结果 / 每 n 步 / compaction 后）原样重新投递进模型窗口，使一次声明的规则撑得过长轮次与 compaction 摘要。 | ✅ web/headless/sdk/acp（纯 in-process 事件监听，无外部依赖）；❓ sdk-minimal（agent 事件瀑布可用性未验证） |
 
 图例：✅ 兼容 / ⚠️ 可组成功能降级 / ❌ 不兼容 / ❓ 未验证。(forked) = 个人分叉版本。
 
